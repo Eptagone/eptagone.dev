@@ -16,7 +16,7 @@ To call the function, do the following:
 3. Call funcion HashComputation
 example:
 
-```CSharp
+```csharp
 Sha256 hasher = new Sha256();
 byte[] hash = hasher.HashComputation(input)
 ```

@@ -4,7 +4,7 @@ pre-commit:
   parallel: true
   commands:
     astro-check:
-      glob: "*.{ts,tsx,astro}"
+      glob: "*.{ts,tsx,astro,css}"
       run: pnpm dlx astro check
     elint:
       glob: "*.{ts,tsx}"

@@ -20,7 +20,6 @@
         "src/shared/*"
       ]
     },
-    "jsx": "preserve",
     "jsxImportSource": "solid-js"
   },
   "include": [

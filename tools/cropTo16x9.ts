@@ -12,7 +12,7 @@ const outputPath = process.argv.at(3);
 
 const metadata = await sharp(imagePath).metadata();
 
-const width = metadata.width!;
+const width = metadata.width;
 const height = Math.round(width / 16 * 9);
 
 await cropImage(imagePath, width, height, outputPath);

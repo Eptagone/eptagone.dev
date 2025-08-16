@@ -1,9 +1,9 @@
 {
     "[astro]": {
-        "editor.defaultFormatter": "astro-build.astro-vscode"
+        "editor.defaultFormatter": "astro-build.astro-vscode",
     },
     "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "vscode.typescript-language-features",
     },
     "[tailwindcss]": {
         "editor.defaultFormatter": "vscode.css-language-features"
@@ -15,7 +15,10 @@
     "editor.formatOnSave": true,
     "npm.packageManager": "pnpm",
     "eslint.useFlatConfig": true,
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "typescript.inlayHints.variableTypes.enabled": true,
     "typescript.referencesCodeLens.enabled": true,
+    "typescript.preferences.preferTypeOnlyAutoImports": true,
     "typescript.tsdk": "node_modules/typescript/lib",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "diffEditor.ignoreTrimWhitespace": false,
