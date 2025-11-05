@@ -7,9 +7,6 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
     site: "https://eptagone.dev",
     trailingSlash: "never",
-    build: {
-        format: "file",
-    },
     integrations: [
         sitemap({
             filter: url => !url.match(/https:\/\/eptagone\.dev\/tags/),
