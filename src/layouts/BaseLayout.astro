@@ -81,10 +81,22 @@ const pageType = Astro.props.type ?? "website";
         <slot name="head" />
     </head>
     <body class="bg-gray-50 dark:bg-gray-950 dark:text-white">
+        {/* Google tag (gtag.js) */}
+        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-Q01X0JRM3B"></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-Q01X0JRM3B");
+        </script>
+
         {/* Root element */}
         <div class="flex min-h-full flex-col">
             <Header />
-            <main class="flex-grow">
+            <main class="grow">
                 <slot />
             </main>
             <!-- <Footer /> -->
