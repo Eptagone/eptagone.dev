@@ -9,3 +9,6 @@ pre-commit:
     elint:
       glob: "*.{ts,tsx}"
       run: pnpm dlx eslint src
+    increase-version:
+      glob: "*.{ts,tsx,astro,css,json,txt}"
+      run: pnpm exec tsx tools/increase-version.ts {staged_files}

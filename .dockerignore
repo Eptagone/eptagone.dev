@@ -1,0 +1,22 @@
+# dependencies
+node_modules
+
+# macOS-specific files
+.DS_Store
+
+# dotenv environment variables file
+.env
+
+# output
+dist
+
+# Git
+.git
+.gitignore
+
+# VS Code
+.vscode
+
+# Docker compose
+*compose.yaml
+*compose.override.yaml
