@@ -44,8 +44,8 @@ jobs:
         with:
           images: ${{ secrets.REGISTRY }}/${{ github.repository }}
           tags: |
-            - ${{ steps.get_version.outputs.version }}
-            - latest
+            - type=raw,value=${{ steps.get_version.outputs.version }}
+            - type=raw,value=latest
 
       - name: Build and Push
         uses: docker/build-push-action@v7
