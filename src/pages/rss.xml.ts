@@ -1,5 +1,5 @@
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/shared/constants";
 import rss, { type RSSFeedItem } from "@astrojs/rss";
-import { SITE_DESCRIPTION, SITE_TITLE } from "@shared/constants";
 import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
 

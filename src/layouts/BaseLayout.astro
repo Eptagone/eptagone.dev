@@ -1,11 +1,11 @@
 ---
 import "../globals.css";
 import { getImage } from "astro:assets";
-import type { LayoutProps } from "@shared/models";
-import { Header, Footer } from "@components/global";
-import { ClientRouter } from "astro:transitions";
-import MainImage from "@images/dark-face.png";
+import type { LayoutProps } from "@/shared/models";
+import { Header, Footer } from "@/components/global";
+import MainImage from "@/assets/images/dark-face.png";
 import type { Thing, WithContext } from "schema-dts";
+import { ClientRouter } from "astro:transitions";
 
 interface Props extends LayoutProps {}
 const Icon = await getImage({ src: MainImage, width: 32, height: 32 });

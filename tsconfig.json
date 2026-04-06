@@ -2,31 +2,11 @@
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
     "noImplicitAny": true,
-    "baseUrl": ".",
     "paths": {
-      "@images/*": [
-        "src/assets/images/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@shared/*": [
-        "src/shared/*"
+      "@/*": [
+        "./src/*"
       ]
     },
     "jsxImportSource": "solid-js"
-  },
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
-  ]
+  }
 }

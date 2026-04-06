@@ -1,13 +1,13 @@
 ---
 import { Picture } from "astro:assets";
 import ThemeSwitcher from "./ThemeSwitcher";
-import MainImage from "@images/dark-face.png";
+import MainImage from "@/assets/images/dark-face.png";
 ---
 
 <header class="group relative flex p-4">
     <div class="mx-auto flex w-full max-w-6xl items-center justify-between">
         <a href="/" title="Home page" class="flex items-center gap-4">
-            <div class="flex-shrink-0">
+            <div class="shrink-0">
                 <Picture src={MainImage} alt="Jeffrey J. C. N. Salcedo Rivera" loading="eager" class="h-10 w-10 rounded-full" />
             </div>
             <span class="text-xl">Quetzal Developer</span>
@@ -34,7 +34,7 @@ import MainImage from "@images/dark-face.png";
 </header>
 
 <script>
-    import { attachExitListener } from "@shared/client";
+    import { attachExitListener } from "@/shared/client";
 
     const loadHamburgerMenu = () => {
         const header = document.querySelector("header");
