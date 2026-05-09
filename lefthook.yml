@@ -1,14 +1,26 @@
-# yaml-language-server: $schema=https://json.schemastore.org/lefthook.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/evilmartians/lefthook/refs/heads/master/schema.json
+# EXAMPLE USAGE:
+#
+#   Refer for explanation to following link:
+#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+#
 
 pre-commit:
-  parallel: true
-  commands:
-    astro-check:
-      glob: "*.{ts,tsx,astro,css}"
-      run: pnpm dlx astro check
-    elint:
-      glob: "*.{ts,tsx}"
-      run: pnpm dlx eslint src
-    increase-version:
-      glob: "*.{ts,tsx,astro,css,json,txt}"
-      run: pnpm exec tsx tools/increase-version.ts {staged_files}
+  jobs:
+    - name: Stash non-staged files
+      run: git stash push -k -u # Stash non-staged files
+    - name: Validate and confirm
+      group:
+        parallel: true
+        jobs:
+          - name: astro check
+            glob: "*.{ts,tsx,astro,css}"
+            run: pnpm exec astro check
+          - name: elint
+            glob: "*.{ts,tsx}"
+            run: pnpm exec eslint src
+          - name: Update version
+            glob: "*.{ts,tsx,astro,css,json,txt}"
+            run: pnpm exec tsx tools/increase-version.ts {staged_files}
+    - name: Restore stashed files
+      run: git stash pop

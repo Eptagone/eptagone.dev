@@ -11,7 +11,8 @@ export default defineConfig({
         sitemap({
             filter: url => !url.match(/https:\/\/eptagone\.dev\/tags/),
         }),
-        solidJs()],
+        solidJs(),
+    ],
     vite: {
         plugins: [tailwindcss()],
     },
