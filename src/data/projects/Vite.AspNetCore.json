@@ -1,15 +1,15 @@
 {
-    "name": "Vite.AspNetCore",
-    "description": "Small library to integrate Vite into ASP.NET projects",
-    "link": "https://github.com/Eptagone/Vite.AspNetCore",
-    "tags": [
-        "vite",
-        "dotnet",
-        "aspnetcore",
-        "javascript",
-        "typescript",
-        "bundler",
-        "build",
-        "tooling"
-    ]
+  "name": "Vite.AspNetCore",
+  "description": "Small library to integrate Vite into ASP.NET projects",
+  "link": "https://github.com/Eptagone/Vite.AspNetCore",
+  "tags": [
+    "vite",
+    "dotnet",
+    "aspnetcore",
+    "javascript",
+    "typescript",
+    "bundler",
+    "build",
+    "tooling"
+  ]
 }

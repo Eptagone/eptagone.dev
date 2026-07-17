@@ -1,0 +1,63 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "options": {
+    "typeAware": true
+  },
+  "plugins": ["typescript", "unicorn", "oxc"],
+  "jsPlugins": ["eslint-plugin-tsdoc"],
+  "categories": {
+    "correctness": "error"
+  },
+  "env": {
+    "builtin": true
+  },
+  "rules": {
+    "no-var": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/array-type": "warn",
+    "typescript/ban-ts-comment": [
+      "warn",
+      {
+        "ts-expect-error": "allow-with-description"
+      }
+    ],
+    "tsdoc/syntax": "warn",
+    "typescript/consistent-type-definitions": "error",
+    "typescript/no-unnecessary-condition": "error",
+    "typescript/no-floating-promises": "off",
+    "typescript/triple-slash-reference": "off",
+    "typescript/no-misused-spread": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js"],
+      "jsPlugins": ["@stylistic/eslint-plugin"],
+      "rules": {
+        "@stylistic/quotes": "warn",
+        "@stylistic/type-annotation-spacing": "warn",
+        "@stylistic/space-infix-ops": "warn",
+        "@stylistic/space-in-parens": "warn",
+        "@stylistic/object-curly-spacing": ["warn", "always"],
+        "@stylistic/no-trailing-spaces": "warn",
+        "@stylistic/max-statements-per-line": "warn",
+        "@stylistic/keyword-spacing": "warn",
+        "@stylistic/key-spacing": "warn",
+        "@stylistic/jsx-self-closing-comp": "warn"
+      }
+    },
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "no-unassigned-vars": "off"
+      }
+    }
+  ]
+}

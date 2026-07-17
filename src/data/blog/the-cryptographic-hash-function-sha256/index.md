@@ -14,7 +14,7 @@ To call the function, do the following:
 1. Move the sha256.cs file to your Visual Studio Project.
 2. Open the file sha256.cs and change the namespace for your project.
 3. Call funcion HashComputation
-example:
+   example:
 
 ```csharp
 Sha256 hasher = new Sha256();

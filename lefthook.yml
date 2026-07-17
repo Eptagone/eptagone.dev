@@ -8,7 +8,7 @@
 pre-commit:
   jobs:
     - name: Stash non-staged files
-      run: git stash push -k -u # Stash non-staged files
+      run: git stash push -k -u hook_stash # Stash non-staged files
     - name: Validate and confirm
       group:
         parallel: true
@@ -16,11 +16,13 @@ pre-commit:
           - name: astro check
             glob: "*.{ts,tsx,astro,css}"
             run: pnpm exec astro check
-          - name: elint
+          - name: oxlint
             glob: "*.{ts,tsx}"
-            run: pnpm exec eslint src
+            run: pnpm exec oxlint
           - name: Update version
             glob: "*.{ts,tsx,astro,css,json,txt}"
             run: pnpm exec tsx tools/increase-version.ts {staged_files}
+post-commit:
+  jobs:
     - name: Restore stashed files
-      run: git stash pop
+      run: git stash pop hook_stash

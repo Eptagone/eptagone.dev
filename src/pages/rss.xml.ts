@@ -18,14 +18,14 @@ export async function GET(context: APIContext) {
         // See "Generating items" section for examples using content collections and glob imports
         items: blog
             .sort((a, b) => (a.data.publishDate > b.data.publishDate ? -1 : 1))
-            .map<RSSFeedItem>(post => ({
+            .map<RSSFeedItem>((post) => ({
                 title: post.data.title,
                 description: post.data.description,
                 link: `/blog/${post.id}`,
                 pubDate: post.data.publishDate,
             })),
         // (optional) inject custom xml
-        customData: `<language>en-us</language>`,
+        customData: "<language>en-us</language>",
         trailingSlash: false,
     });
 }

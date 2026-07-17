@@ -1,37 +1,37 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "Astro: Launch",
-			"icon": {
-				"id": "server",
-				"color": "terminal.ansiMagenta"
-			},
-			"type": "npm",
-			"script": "dev",
-			"detail": "astro dev",
-			"isBackground": true,
-			"problemMatcher": {
-				"base": "$tsc-watch",
-				"severity": "error",
-				"source": "Vite - Dev Server",
-				"background": {
-					"activeOnStart": true,
-					"beginsPattern": "^astro\\sv\\d+\\.\\d+\\.\\d+",
-					"endsPattern": "ready\\sin\\s\\d+(?:\\.\\d+)?\\s+[m]s$"
-				}
-			}
-		},
-		{
-			"label": "Astro: Build",
-			"icon": {
-				"id": "server-process",
-				"color": "terminal.ansiMagenta"
-			},
-			"type": "npm",
-			"script": "build",
-			"detail": "astro build",
-			"problemMatcher": []
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Astro: Launch",
+      "icon": {
+        "id": "server",
+        "color": "terminal.ansiMagenta"
+      },
+      "type": "npm",
+      "script": "dev",
+      "detail": "astro dev",
+      "isBackground": true,
+      "problemMatcher": {
+        "base": "$tsc-watch",
+        "severity": "error",
+        "source": "Vite - Dev Server",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^astro\\sv\\d+\\.\\d+\\.\\d+",
+          "endsPattern": "ready\\sin\\s\\d+(?:\\.\\d+)?\\s+[m]s$"
+        }
+      }
+    },
+    {
+      "label": "Astro: Build",
+      "icon": {
+        "id": "server-process",
+        "color": "terminal.ansiMagenta"
+      },
+      "type": "npm",
+      "script": "build",
+      "detail": "astro build",
+      "problemMatcher": []
+    }
+  ]
 }

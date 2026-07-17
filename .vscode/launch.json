@@ -1,36 +1,33 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "command": "./node_modules/.bin/astro dev",
-            "name": "Astro: Launch",
-            "request": "launch",
-            "type": "node-terminal"
-        },
-        {
-            "name": "Launch Edge",
-            "request": "launch",
-            "type": "msedge",
-            "url": "http://localhost:4321",
-            "presentation": {
-                "hidden": true,
-            },
-            "skipFiles": [
-                "<node_internals>/**",
-                "**/node_modules/**",
-                "${workspaceFolder}/dist/**",
-                "${workspaceFolder}/public/**",
-            ],
-        }
-    ],
-    "compounds": [
-        {
-            "name": "Astro: Launch with MS Edge",
-            "configurations": [
-                "Astro: Launch",
-                "Launch Edge"
-            ],
-            "stopAll": true
-        },
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "./node_modules/.bin/astro dev",
+      "name": "Astro: Launch",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "name": "Launch Edge",
+      "request": "launch",
+      "type": "msedge",
+      "url": "http://localhost:4321",
+      "presentation": {
+        "hidden": true
+      },
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**",
+        "${workspaceFolder}/dist/**",
+        "${workspaceFolder}/public/**"
+      ]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Astro: Launch with MS Edge",
+      "configurations": ["Astro: Launch", "Launch Edge"],
+      "stopAll": true
+    }
+  ]
 }

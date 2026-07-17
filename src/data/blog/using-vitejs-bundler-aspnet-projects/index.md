@@ -53,14 +53,14 @@ Our vite config file will looks like this:
  * Name: vite.config.ts
  */
 
-import { UserConfig, defineConfig } from 'vite';
-import { spawn } from 'child_process';
-import fs from 'fs';
-import path from 'path';
+import { UserConfig, defineConfig } from "vite";
+import { spawn } from "child_process";
+import fs from "fs";
+import path from "path";
 
 // Get the base folder for certificates.
 const baseFolder =
-    process.env.APPDATA !== undefined && process.env.APPDATA !== ''
+    process.env.APPDATA !== undefined && process.env.APPDATA !== ""
         ? `${process.env.APPDATA}/ASP.NET/https`
         : `${process.env.HOME}/.aspnet/https`;
 
@@ -78,49 +78,52 @@ export default defineConfig(async () => {
     if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
         // Wait for the certificate to be generated
         await new Promise<void>((resolve) => {
-            spawn('dotnet', [
-                'dev-certs',
-                'https',
-                '--export-path',
-                certFilePath,
-                '--format',
-                'Pem',
-                '--no-password',
-            ], { stdio: 'inherit', })
-                .on('exit', (code) => {
-                    resolve();
-                    if (code) {
-                        process.exit(code);
-                    }
-                });
+            spawn(
+                "dotnet",
+                [
+                    "dev-certs",
+                    "https",
+                    "--export-path",
+                    certFilePath,
+                    "--format",
+                    "Pem",
+                    "--no-password",
+                ],
+                { stdio: "inherit" },
+            ).on("exit", (code) => {
+                resolve();
+                if (code) {
+                    process.exit(code);
+                }
+            });
         });
-    };
+    }
 
     // Define the Vite configuration
     const config: UserConfig = {
-        appType: 'custom',
-        root: 'Assets',
-        publicDir: 'public',
+        appType: "custom",
+        root: "Assets",
+        publicDir: "public",
         build: {
-            manifest: 'assets.manifest.json',
+            manifest: "assets.manifest.json",
             emptyOutDir: true,
-            outDir: '../wwwroot',
-            assetsDir: '',
+            outDir: "../wwwroot",
+            assetsDir: "",
             rollupOptions: {
-                input: 'Assets/main.ts',
+                input: "Assets/main.ts",
             },
         },
         server: {
             port: 5173,
             https: {
                 cert: certFilePath,
-                key: keyFilePath
+                key: keyFilePath,
             },
             hmr: {
-                clientPort: 5173
-            }
+                clientPort: 5173,
+            },
         },
-    }
+    };
 
     return config;
 });

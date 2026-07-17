@@ -1,5 +1,6 @@
 /**
  * Creates a uri from the entered text.
+ *
  * @param text - Text to convert.
  * @returns
  */
@@ -9,6 +10,7 @@ export function createUri(text: string): string {
 
 /**
  * Returns the entered text in kebab-case format.
+ *
  * @param text - Text to convert.
  * @returns Text in kebab-case.
  */
@@ -32,6 +34,7 @@ function kebaberize(text: string): Lowercase<string> {
 
 /**
  * Removes diacritics from a text.
+ *
  * @param text - Text to clean.
  * @returns Text without diacritics.
  */

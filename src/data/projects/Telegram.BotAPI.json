@@ -1,10 +1,6 @@
 {
-    "name": "Telegram.BotAPI",
-    "description": "Provides a simple and easy to use API for the Telegram Bot API in .NET projects.",
-    "link": "https://github.com/Eptagone/Telegram.BotAPI",
-    "tags": [
-        "telegram",
-        "telegram bots",
-        "dotnet"
-    ]
+  "name": "Telegram.BotAPI",
+  "description": "Provides a simple and easy to use API for the Telegram Bot API in .NET projects.",
+  "link": "https://github.com/Eptagone/Telegram.BotAPI",
+  "tags": ["telegram", "telegram bots", "dotnet"]
 }

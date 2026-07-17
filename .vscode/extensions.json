@@ -1,10 +1,10 @@
 {
-    "recommendations": [
-        "aaron-bond.better-comments",
-        "astro-build.astro-vscode",
-        "bradlc.vscode-tailwindcss",
-        "dbaeumer.vscode-eslint",
-        "yzhang.markdown-all-in-one"
-    ],
-    "unwantedRecommendations": []
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "astro-build.astro-vscode",
+    "bradlc.vscode-tailwindcss",
+    "oxc.oxc-vscode",
+    "yzhang.markdown-all-in-one"
+  ],
+  "unwantedRecommendations": []
 }

@@ -1,6 +1,6 @@
 // Increase the version number in `version.txt`.
 
-import { exec } from "child_process";
+import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
 
@@ -16,11 +16,11 @@ if (!matches) {
 }
 
 const files = process.argv.slice(2);
-if (!files.find(file => file === "version.txt")) {
+if (!files.find((file) => file === "version.txt")) {
     const patch = Number(matches.groups!.patch) + 1;
     const newVersion = `${matches.groups!.major}.${matches.groups!.minor}.${patch}`;
     const newVersionContent = versionContent.replace(semverRegex, newVersion);
     fs.writeFileSync(versionFilePath, newVersionContent, { encoding: "utf-8" });
-    exec(`git add version.txt`);
+    execSync("git add version.txt");
     console.log(`New version number is '${newVersion}'.`);
 }

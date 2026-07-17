@@ -11,7 +11,7 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
 FROM build-deps AS build
 COPY src src
-COPY ["*.ts", "*.js", "tsconfig.json", "./"]
+COPY ["*.ts", "tsconfig.json", "./"]
 RUN pnpm run build
 
 FROM nginx:latest AS runtime

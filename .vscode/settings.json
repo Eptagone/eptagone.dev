@@ -1,29 +1,24 @@
 {
-    "[astro]": {
-        "editor.defaultFormatter": "astro-build.astro-vscode",
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features",
-    },
-    "[tailwindcss]": {
-        "editor.defaultFormatter": "vscode.css-language-features"
-    },
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit",
-        "source.organizeImports": "explicit"
-    },
-    "editor.formatOnSave": true,
-    "npm.packageManager": "pnpm",
-    "eslint.useFlatConfig": true,
-    "js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
-    "js/ts.inlayHints.variableTypes.enabled": true,
-    "js/ts.referencesCodeLens.enabled": true,
-    "js/ts.preferences.preferTypeOnlyAutoImports": true,
-    "js/ts.tsdk.path": "node_modules/typescript/lib",
-    "js/ts.updateImportsOnFileMove.enabled": "always",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "files.eol": "\n",
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "tailwindCSS.experimental.configFile": "src/globals.css"
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit",
+    "source.fixAll.ts": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "npm.packageManager": "pnpm",
+  "js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
+  "js/ts.inlayHints.variableTypes.enabled": true,
+  "js/ts.referencesCodeLens.enabled": true,
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "tailwindCSS.experimental.configFile": "src/globals.css"
 }

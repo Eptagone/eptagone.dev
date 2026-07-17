@@ -1,9 +1,6 @@
 {
     "$schema": "https://json.schemastore.org/prettierrc",
-    "plugins": [
-        "prettier-plugin-astro",
-        "prettier-plugin-tailwindcss"
-    ],
+    "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
     "bracketSameLine": true,
     "printWidth": 240,
     "tabWidth": 4
