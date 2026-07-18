@@ -13,6 +13,7 @@
   },
   "rules": {
     "no-var": "error",
+    "typescript/no-unnecessary-type-assertion": "error",
     "typescript/no-explicit-any": "error",
     "typescript/array-type": "warn",
     "typescript/ban-ts-comment": [
@@ -41,7 +42,6 @@
       "files": ["*.ts", "*.tsx", "*.js"],
       "jsPlugins": ["@stylistic/eslint-plugin"],
       "rules": {
-        "@stylistic/quotes": "warn",
         "@stylistic/type-annotation-spacing": "warn",
         "@stylistic/space-infix-ops": "warn",
         "@stylistic/space-in-parens": "warn",
