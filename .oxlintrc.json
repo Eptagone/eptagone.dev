@@ -4,7 +4,7 @@
     "typeAware": true
   },
   "plugins": ["typescript", "unicorn", "oxc"],
-  "jsPlugins": ["eslint-plugin-tsdoc"],
+  "jsPlugins": ["eslint-plugin-tsdoc", "@stylistic/eslint-plugin"],
   "categories": {
     "correctness": "error"
   },
@@ -13,21 +13,6 @@
   },
   "rules": {
     "no-var": "error",
-    "typescript/no-unnecessary-type-assertion": "error",
-    "typescript/no-explicit-any": "error",
-    "typescript/array-type": "warn",
-    "typescript/ban-ts-comment": [
-      "warn",
-      {
-        "ts-expect-error": "allow-with-description"
-      }
-    ],
-    "tsdoc/syntax": "warn",
-    "typescript/consistent-type-definitions": "error",
-    "typescript/no-unnecessary-condition": "error",
-    "typescript/no-floating-promises": "off",
-    "typescript/triple-slash-reference": "off",
-    "typescript/no-misused-spread": "off",
     "no-unused-vars": [
       "error",
       {
@@ -35,28 +20,47 @@
         "caughtErrorsIgnorePattern": "^_",
         "argsIgnorePattern": "^_"
       }
+    ],
+    "prefer-const": "error",
+    "@stylistic/quotes": [
+      "warn",
+      "double",
+      {
+        "avoidEscape": true
+      }
     ]
   },
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js"],
-      "jsPlugins": ["@stylistic/eslint-plugin"],
+      "files": ["*.ts", "*.tsx", "*.astro"],
       "rules": {
-        "@stylistic/type-annotation-spacing": "warn",
-        "@stylistic/space-infix-ops": "warn",
-        "@stylistic/space-in-parens": "warn",
-        "@stylistic/object-curly-spacing": ["warn", "always"],
-        "@stylistic/no-trailing-spaces": "warn",
-        "@stylistic/max-statements-per-line": "warn",
-        "@stylistic/keyword-spacing": "warn",
-        "@stylistic/key-spacing": "warn",
-        "@stylistic/jsx-self-closing-comp": "warn"
+        "typescript/no-unnecessary-type-assertion": "error",
+        "typescript/no-explicit-any": "error",
+        "typescript/array-type": "warn",
+        "typescript/ban-ts-comment": [
+          "warn",
+          {
+            "ts-expect-error": "allow-with-description"
+          }
+        ],
+        "tsdoc/syntax": "warn",
+        "typescript/consistent-type-definitions": "warn",
+        "typescript/no-unnecessary-condition": "warn",
+        "typescript/no-floating-promises": "off",
+        "typescript/triple-slash-reference": "off"
       }
     },
     {
       "files": ["*.tsx"],
       "rules": {
-        "no-unassigned-vars": "off"
+        "no-unassigned-vars": "off",
+        "@stylistic/jsx-self-closing-comp": "warn"
+      }
+    },
+    {
+      "files": ["*.astro"],
+      "rules": {
+        "no-unused-expressions": "off"
       }
     }
   ]
