@@ -2,7 +2,8 @@ FROM node:lithium-slim AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 ENV CI=true
-RUN corepack enable pnpm
+COPY --from=ghcr.io/pnpm/pnpm:12 /opt/pnpm /opt/pnpm
+RUN for bin in pnpm pn pnpx pnx; do ln -s "/opt/pnpm/$bin" "/usr/local/bin/$bin"; done
 
 FROM base AS build-deps
 WORKDIR /source
