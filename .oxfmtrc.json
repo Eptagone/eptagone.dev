@@ -4,6 +4,7 @@
   "endOfLine": "lf",
   "semi": true,
   "tabWidth": 4,
+  "astro": true,
   "sortTailwindcss": true,
   "sortPackageJson": true,
   "jsdoc": true,

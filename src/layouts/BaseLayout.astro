@@ -69,10 +69,15 @@ const pageType = Astro.props.type ?? "website";
 
         {/* schema.org */}
         <script type="application/ld+json" is:inline set:html={JSON.stringify(ldSchema)} />
-
         {/* Theme Switcher */}
         <script is:inline data-astro-rerun>
-            document.documentElement.classList[localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "add" : "remove"]("dark");
+            document.documentElement.classList[
+                localStorage.theme === "dark" ||
+                (!("theme" in localStorage) &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+                    ? "add"
+                    : "remove"
+            ]("dark");
         </script>
 
         <ClientRouter />
@@ -82,7 +87,11 @@ const pageType = Astro.props.type ?? "website";
     </head>
     <body class="bg-gray-50 dark:bg-gray-950 dark:text-white">
         {/* Google tag (gtag.js) */}
-        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-Q01X0JRM3B"></script>
+        <script
+            is:inline
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-Q01X0JRM3B"
+        ></script>
         <script is:inline>
             window.dataLayer = window.dataLayer || [];
             function gtag() {

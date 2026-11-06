@@ -46,7 +46,13 @@ if (!post) return null;
 const { Content } = await render(post);
 ---
 
-<Layout title={title} description={description} imageUrl={imageUrl.toString()} type="article" schema={schema}>
+<Layout
+    title={title}
+    description={description}
+    imageUrl={imageUrl.toString()}
+    type="article"
+    schema={schema}
+>
     <meta slot="head" name="article:published_time" content={publishDate.toISOString()} />
     <div class="flex p-4">
         <article class="mx-auto w-full max-w-5xl rounded bg-white p-8 dark:bg-gray-900">
@@ -55,7 +61,12 @@ const { Content } = await render(post);
                 <h1 class="mb-4 text-3xl font-semibold">{title}</h1>
             </header>
             <div class="mb-4 border-b-2 pb-8">
-                <Picture src={image} alt={title} loading="eager" class="max-h-96 w-full rounded-lg object-cover" />
+                <Picture
+                    src={image}
+                    alt={title}
+                    loading="eager"
+                    class="max-h-96 w-full rounded-lg object-cover"
+                />
             </div>
             <div id="content" class="mx-auto md:text-justify">
                 <Content />
@@ -63,15 +74,13 @@ const { Content } = await render(post);
             <footer class="">
                 <div class="mb-4 flex flex-col justify-between border-b pb-4 md:flex-row">
                     <ul class="mb-4 flex flex-wrap gap-4">
-                        {
-                            Astro.props.entry.data.tags.map((tag) => (
-                                <li class="rounded-xl bg-gray-300 dark:bg-gray-700">
-                                    <a href={`/tags/${createUri(tag)}`} class="block px-2 py-1">
-                                        {tag}
-                                    </a>
-                                </li>
-                            ))
-                        }
+                        {Astro.props.entry.data.tags.map((tag) => (
+                            <li class="rounded-xl bg-gray-300 dark:bg-gray-700">
+                                <a href={`/tags/${createUri(tag)}`} class="block px-2 py-1">
+                                    {tag}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
                     <div class="ml-auto">
                         <ShareButton text={title} url={canonicalURL.toString()} client:visible />

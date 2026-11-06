@@ -1,13 +1,9 @@
 ---
 interface Props {
-    /**
-     * Unique identifier for the page.
-     */
+    /** Unique identifier for the page. */
     identifier: string;
 
-    /**
-     * Canonical URL for the page.
-     */
+    /** Canonical URL for the page. */
     canonicalUrl: URL;
 }
 
@@ -32,7 +28,10 @@ const { identifier, canonicalUrl } = Astro.props;
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>
+    Please enable JavaScript to view the{" "}
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
 
 <style>
     #disqus_thread {
